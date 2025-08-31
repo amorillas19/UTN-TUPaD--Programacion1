@@ -1,15 +1,92 @@
-palabra_usuario=(input("Ingrese una frase o palabra: "))
-palabra_usuario=palabra_usuario.lower()
-ultimo_caracter=(len(palabra_usuario)-1)
-if (palabra_usuario[ultimo_caracter] == "a"):
-    print (palabra_usuario+"!")
-elif(palabra_usuario[ultimo_caracter] == "e"):
-    print (palabra_usuario+"!")
-elif(palabra_usuario[ultimo_caracter] == "i"):
-    print (palabra_usuario+"!")
-elif(palabra_usuario[ultimo_caracter] == "o"):
-    print (palabra_usuario+"!")
-elif(palabra_usuario[ultimo_caracter] == "u"):
-    print (palabra_usuario+"!")
-else:
-    print(palabra_usuario)
+#Ejercicio 10
+
+hemisferio:str=str(input("Ingrese en cual hemisterio se encuentra: "))
+hemisferio=hemisferio.upper()
+mes:int=int(input("Que mes del año es? "))
+dia:int=int(input("Que día del año es? "))
+
+
+if(mes==1):
+    if(hemisferio=="N"):
+        print("Invierno")
+    elif(hemisferio=="S"):
+        print("Verano")
+elif(mes==2):
+    if(hemisferio=="N"):
+        print("Invierno")
+    elif(hemisferio=="S"):
+        print("Verano")
+elif(mes==3):
+    if(dia<=20):
+        if(hemisferio=="N"):
+            print("Invierno")
+        if(hemisferio=="S"):
+            print("Verano")
+    elif(dia>=21):
+        if(hemisferio=="N"):
+            print("Primavera")
+        if(hemisferio=="S"):
+            print("Otoño")
+if(mes==4):
+    if(hemisferio=="N"):
+        print("Primavera")
+    elif(hemisferio=="S"):
+        print("Otoño")
+elif(mes==5):
+    if(hemisferio=="N"):
+        print("Primavera")
+    elif(hemisferio=="S"):
+        print("Otoño")
+elif(mes==6):
+    if(dia<=20):
+        if(hemisferio=="N"):
+            print("Primavera")
+        if(hemisferio=="S"):
+            print("Otoño")
+    elif(dia>=21):
+        if(hemisferio=="N"):
+            print("Verano")
+        if(hemisferio=="S"):
+            print("Invierno")
+if(mes==7):
+    if(hemisferio=="N"):
+        print("Verano")
+    elif(hemisferio=="S"):
+        print("Invierno")
+elif(mes==8):
+    if(hemisferio=="N"):
+        print("Verano")
+    elif(hemisferio=="S"):
+        print("Invierno")
+elif(mes==9):
+    if(dia<=20):
+        if(hemisferio=="N"):
+            print("Verano")
+        if(hemisferio=="S"):
+            print("Invierno")
+    elif(dia>=21):
+        if(hemisferio=="N"):
+            print("Otoño")
+        if(hemisferio=="S"):
+            print("Primavera")
+if(mes==10):
+    if(hemisferio=="N"):
+        print("Otoño")
+    elif(hemisferio=="S"):
+        print("Primavera")
+elif(mes==11):
+    if(hemisferio=="N"):
+        print("Otoño")
+    elif(hemisferio=="S"):
+        print("Primavera")
+elif(mes==12):
+    if(dia<=20):
+        if(hemisferio=="N"):
+            print("Otoño")
+        if(hemisferio=="S"):
+            print("Primavera")
+    elif(dia>=21):
+        if(hemisferio=="N"):
+            print("Invierno")
+        if(hemisferio=="S"):
+            print("Verano")                                  
