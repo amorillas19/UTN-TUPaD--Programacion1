@@ -1,33 +1,15 @@
-import random
+#Ejercicio 1
 
-numeroElegido=int(random.randint(0,101))
-print(numeroElegido)
+for i in range (0,101):
+    print (i)
 
-flag : bool = bool(True)
-flagInterna : bool = bool (True)
-contadorIntentos : int=int(1)
+#Ejercicio 2
 
+numero_usuario=int(input("Ingrese un numero"))
+contador=0
 
+while(numero_usuario>0):
+    numero_usuario=numero_usuario/10
+    contador=contador+1
 
-
-while(flag==True):
-    
-    print("Adivine el numero:")
-
-    while(flagInterna==True):
-        numeroUsuario=(input())
-        if(isinstance(numeroUsuario, int)):
-            flagInterna==False
-            print("paso por aca")
-
-    if (numeroUsuario==numeroElegido):
-        print("correcto")
-        print("Acertaste en ", contadorIntentos, " intentos")
-        flag=False
-    elif(numeroUsuario>numeroElegido):
-        print("El numero debe ser mas chico")
-        contadorIntentos+=1
-    elif(numeroUsuario<numeroElegido):
-        print("El numero debe ser mas grande")
-        contadorIntentos+=1
-
+print(f"El numero {numero_usuario} tiene {contador} digitos")
