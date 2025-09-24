@@ -69,7 +69,7 @@ print(lista_numeros_par)
 print ("Lista IMPAR")
 print(lista_numeros_impar)
 
-#Ejercicio4
+#Ejercicio 4
 
 lista_repetidos=[1,3,5,3,7,1,9,5,3]
 lista_sin_repetir=[]
@@ -80,3 +80,34 @@ for i in range(len(lista_repetidos)):
 
 print(lista_sin_repetir)
 
+#Ejercicio 5
+
+lista_estudiantes=["Antonio", "Benjamin", "Carlos", "Damian", "Enzo", "Fausto", "German", "Hector"]
+
+eleccion=str(input("Desea agregar o eliminar un estudiante: "))
+eleccion=eleccion.lower()
+
+if eleccion=="agregar":
+    aux_new=str(input("Indique el nombre del estudiante a agregar: "))
+    lista_estudiantes.append(aux_new)
+elif eleccion=="eliminar":
+    aux_remove=str(input("Indique el nombre del estudiante que desea remover: "))
+    lista_estudiantes.remove(aux_remove)
+else:
+    print("La opcion es incorrecta")
+
+print(lista_estudiantes)
+
+#Ejercicio 6
+
+ejemplo=[1,2,3,4,5,6,7]
+
+
+for i in range((len(ejemplo)-1), 0, -1):
+    aux=ejemplo[i]
+    ejemplo[i]=ejemplo[i-1]
+    ejemplo[i-1]=aux
+    
+ejemplo[0]=aux
+
+print(ejemplo)
