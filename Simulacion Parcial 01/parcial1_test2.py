@@ -1,5 +1,5 @@
-lista_especialidades=["cardiologia", "urinaria", "respiracion", "penes"]
-lista_cupos=[5,2,3,0]
+lista_especialidades=[]
+lista_cupos=[]
 
 option=0
 
@@ -67,7 +67,58 @@ while option!=10:
         for i in range (len(lista_especialidades)):
             print (f"{lista_especialidades[i]}: {lista_cupos[i]} cupos")
 
+    elif option==4:
+        aux_request=str(input("Que especialidad desea consultar? "))
+        speciality_checker=True
+        while(speciality_checker):
+            if(aux_request=="" or not(aux_request in lista_especialidades)):
+                print("Especialidad incorrecta, por favor ingrese nuevamente: ")
+                aux_request=str(input("Que especialidad desea consultar?: "))
+            else:
+                speciality_checker=False
+                index=lista_especialidades.index(aux_request)
+                print(f"La especialidad {lista_especialidades[index]} tiene {lista_cupos[index]} cupos")
 
+    elif option==5:
+        aux_list=[]
+        for i in range (len(lista_especialidades)):
+            if(lista_cupos[i]==0):
+                aux_list.append(lista_especialidades[i])
+
+        print(aux_list)
+
+    elif option==6:
+        add_elements=True
+        while(add_elements):
+            speciality_checker=True
+            aux_speciality=str(input("Que especialidad desea ingresar?: "))
+            while(speciality_checker):
+                if(aux_speciality=="" or aux_speciality in lista_especialidades):
+                    print("Especialidad incorrecta, por favor ingrese nuevamente: ")
+                    aux_speciality=str(input("Que especialidad desea ingresar?: "))
+                else:
+                    speciality_checker=False
+                    lista_especialidades.append(aux_speciality)
+                    print("Especialidad ingresada con exito. Cuantos cupos desea incorporar?")
+                    aux_cupos=input()
+                    while(not(aux_cupos.isdigit())):
+                        print("Valor incorrecto, por favor ingrese la cantidad de cupos:")
+                        aux_cupos=input()
+                        aux_cupos=int(aux_cupos)
+                    lista_cupos.append(aux_cupos)
+                    print("Cupos agregados exitosamente")
+                    check_more_specialities=input("Para agregar otra, pulse Y. Pulse cualquier otra tecla para finalizar")
+                    check_more_specialities=check_more_specialities.upper()
+                    if(check_more_specialities!="Y"):
+                        add_elements=False
+
+    elif option==7:
+        aux_list=[]
+        for i in range (len(lista_especialidades)):
+            if(lista_cupos[i]==0):
+                aux_list.append(lista_especialidades[i])
+
+        print(aux_list)
 
     elif option==8:
         flag_menu=True    
@@ -122,9 +173,6 @@ while option!=10:
 
             else:
                 print("No es una opcion correcta. Por favor ingrese, si desea reservar, cancelar o salir")
-                
-
-            
                         
 
     elif option==9:
@@ -139,7 +187,10 @@ while option!=10:
             else:
                 print(f"La especialidad de {lista_especialidades[i]} no tiene turnos el dia de la fecha")
 
-        
+
+    elif option==10:
+        print("GRACIAS")
+        print("---------------")
 
 
 print("---------------")
