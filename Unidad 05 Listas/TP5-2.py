@@ -111,3 +111,124 @@ for i in range((len(ejemplo)-1), 0, -1):
 ejemplo[0]=aux
 
 print(ejemplo)
+
+#Ejercicio7
+
+temperaturas=[[5,12], [6,15], [3,20],[7,14],[10,30],[1,35],[1,15]]
+suma_minimas=0
+suma_maximas=0
+amplitud_termica=0
+dia_amplitud=0
+
+
+for i in range (len(temperaturas)):
+    suma_minimas+=temperaturas[i][0]
+    suma_maximas+=temperaturas[i][1]
+
+print("El promedio de temperaturas minimas es: ", suma_minimas/(len(temperaturas)))
+print("El promedio de temperaturas maximas es: ",suma_maximas/(len(temperaturas)))
+
+for i in range (len(temperaturas)):
+    aux_amplitud=temperaturas[i][1]-temperaturas[i][0]
+    if aux_amplitud>amplitud_termica:
+        amplitud_termica=aux_amplitud
+        dia_amplitud=i+1
+
+print("El dia con mayor amplitud termina fue el día: ", dia_amplitud)
+print("La amplitud termica fue de ", amplitud_termica, " grados")    
+
+#Ejercicio8
+
+notas_estudiantes=[[7,9,3],[8,10,8],[5,3,1],[1,4,2],[7,7,8]]
+promedio_estudiantes=[]
+promedio_materia=[]
+
+
+for i in range(len(notas_estudiantes)):
+    aux_sumatoria=0
+    for j in range(3):
+        aux_sumatoria+=notas_estudiantes[i][j]
+        
+    aux_sumatoria/=3    
+    promedio_estudiantes.append(aux_sumatoria)
+
+for i in range(len(promedio_estudiantes)):
+    print("El promedio del estudiante N°", i+1, ": ", promedio_estudiantes[i])
+
+for i in range(3):
+    aux_materia=0
+    for j in range(len(notas_estudiantes)):
+        aux_materia+=notas_estudiantes[j][i]
+    aux_materia/=5
+    promedio_materia.append(aux_materia)
+
+
+for i in range(len(promedio_materia)):
+    print("El promedio de la materia N° ", i, "es de: ", promedio_materia[i])
+
+
+#Ejercicio9
+
+tablero_tateti=[["-","-","-"],["-","-","-"],["-","-","-"]]
+contador_turnos=1
+
+while(contador_turnos<10):
+    
+    if((contador_turnos%2)):
+        jugador=1
+        dibujo="x"
+    else:
+        jugador=2
+        dibujo="0"
+
+    print("Jugador N°", jugador)
+    fila=int(input("Ingrese la fila: "))
+    columna=int(input("Ingrese la columna: "))
+    if(tablero_tateti[fila][columna]=="-"):
+        tablero_tateti[fila][columna]=dibujo
+        contador_turnos+=1
+    else:
+        print("La casilla ya está ocupada")
+
+    print(tablero_tateti[0])
+    print(tablero_tateti[1])
+    print(tablero_tateti[2])
+
+#Ejercicio10
+
+ventas=[[10,20,30,40],
+        [5,10,15,20],
+        [10000,2,3,4],
+        [2,4,6,8],
+        [3,5,7,9],
+        [8,7,6,5],
+        [120,200,100,500]
+        ]
+venta_producto=[]
+ventas_totales=0
+indice_ventas_totales=0
+venta_mayor=0
+indice_venta_producto=0
+
+
+for numero in range(0,4):
+    aux_venta=0
+    for i in range(len(ventas)):
+        aux_venta+=ventas[i][numero]
+    venta_producto.append(aux_venta)
+print(venta_producto)
+
+for i in range(len(ventas)):
+    aux_totales=0
+    for j in range(4):
+        aux_totales+=ventas[i][j]
+    if(aux_totales>ventas_totales):
+        ventas_totales=aux_totales
+        indice_ventas_totales=i
+print("El dia con mayores ventas fue el dia n°", indice_ventas_totales+1, "donde se vendieron ", ventas_totales ," productos")
+
+for i in range(len(venta_producto)):
+    if(venta_producto[i]>venta_mayor):
+        venta_mayor=venta_producto[i]
+        indice_venta_producto=i
+print("El mas vendido fue el producto N°", indice_venta_producto+1)
