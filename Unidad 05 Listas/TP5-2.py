@@ -1,13 +1,14 @@
 #Ejercicio 1
 
-lista_estudiantes=[6,4,7,8,9,6,4,10,2,7]
+lista_estudiantes=[9,4,7,8,9,6,4,10,2,7]
 
 '''Lista completa'''
 print(lista_estudiantes)
 
 '''Promedio'''
-for i in range (0,11):
-    aux+=i
+aux=0
+for i in range (0,10):
+    aux+=lista_estudiantes[i]
 aux_promedio=aux/len(lista_estudiantes)
 
 print(aux_promedio)

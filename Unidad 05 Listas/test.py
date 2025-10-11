@@ -1,38 +1,28 @@
 #Ejercicio10
 
-ventas=[[10,20,30,40],
-        [5,10,15,20],
-        [10000,2,3,4],
-        [2,4,6,8],
-        [3,5,7,9],
-        [8,7,6,5],
-        [120,200,100,500]
-        ]
-venta_producto=[]
-ventas_totales=0
-indice_ventas_totales=0
-venta_mayor=0
-indice_venta_producto=0
+lista_estudiantes=[9,4,7,8,9,6,4,10,2,7]
 
+'''Lista completa'''
+print(lista_estudiantes)
 
-for numero in range(0,4):
-    aux_venta=0
-    for i in range(len(ventas)):
-        aux_venta+=ventas[i][numero]
-    venta_producto.append(aux_venta)
-print(venta_producto)
+'''Promedio'''
+aux=0
+for i in range (0,10):
+    aux+=lista_estudiantes[i]
+aux_promedio=aux/len(lista_estudiantes)
 
-for i in range(len(ventas)):
-    aux_totales=0
-    for j in range(4):
-        aux_totales+=ventas[i][j]
-    if(aux_totales>ventas_totales):
-        ventas_totales=aux_totales
-        indice_ventas_totales=i
-print("El dia con mayores ventas fue el dia n°", indice_ventas_totales+1, "donde se vendieron ", ventas_totales ," productos")
+print(aux_promedio)
 
-for i in range(len(venta_producto)):
-    if(venta_producto[i]>venta_mayor):
-        venta_mayor=venta_producto[i]
-        indice_venta_producto=i
-print("El mas vendido fue el producto N°", indice_venta_producto+1)
+'''Nota Alta y baja'''
+
+nota_baja=lista_estudiantes[0]
+nota_alta=lista_estudiantes[0]
+
+for i in range(0,10):
+    if lista_estudiantes[i]>nota_alta:
+        nota_alta=lista_estudiantes[i]
+    if lista_estudiantes[i]<nota_baja:
+        nota_baja=lista_estudiantes[i]
+
+print("La nota mas baja es de: ", nota_baja)
+print("La nota mas alta es de: ", nota_alta)
