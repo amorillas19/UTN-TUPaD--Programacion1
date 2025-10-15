@@ -47,7 +47,7 @@ else:
 
 #Ejercicio 5
 
-frase="hola don pepito hola don jose"
+frase=input("Ingrese una frase")
 
 #Set de palabras unicas
 palabras_unicas=frase.split()
@@ -63,3 +63,23 @@ for i in repetidas:
     diccionario_repetidas[i]=contador
 
 print(diccionario_repetidas)
+
+#Ejercicio 6
+
+diccionario_alumnos={}
+for i in range(3):
+    nombre=input("Ingrese el nombre del alumno: ")
+    list=[]
+    for j in range(3):
+        numero=float(input("Ingrese la nota: "))
+        list.append(numero)
+    tupla=tuple(list)
+    diccionario_alumnos[nombre]=tupla
+
+
+for i in diccionario_alumnos:
+    promedio=0
+    for j in range(3):
+        promedio+=diccionario_alumnos[i][j]
+    print(f"La nota promedio de {i} es de: {promedio/3}") 
+
