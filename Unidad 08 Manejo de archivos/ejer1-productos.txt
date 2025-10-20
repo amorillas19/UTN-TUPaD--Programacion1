@@ -1,0 +1,5 @@
+banana,150,20
+manzana,300,15
+sandia,500,5
+Mandarina,50,1
+
