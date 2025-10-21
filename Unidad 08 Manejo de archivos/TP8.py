@@ -17,6 +17,15 @@ with open ("ejer1-productos.txt", "a") as archivo:
     cantidad :str = input("Ingrese la cantidad")
     archivo.write(f"{producto},{precio},{cantidad}\n")
 
+print("------------LISTA CON AGREGADO-------------")
+with open ("ejer1-productos.txt", "r") as archivo:
+    lista_productos = archivo.readlines()
+    for linea in lista_productos:
+        linea = linea.strip()
+        linea = linea.split(",")
+        print (f"Producto: {linea[0].capitalize()} / Precio: ${linea[1]} / Cantidad: {linea[2]}")
+print("-------------------------")
+
 #Ejercicio 4
 
 lista_diccionario = []
@@ -29,7 +38,9 @@ for item in lista_productos:
     producto_d["cantidad"]=item[2]
     lista_diccionario.append(producto_d)
 
+print("------------DICCIONARIO-------------")
 print(lista_diccionario)
+print("-------------------------")
 
 #Ejercicio 5
 
