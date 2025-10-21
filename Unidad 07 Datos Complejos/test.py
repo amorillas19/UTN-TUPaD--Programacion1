@@ -1,16 +1,3 @@
-#Ejercicio 10
+t = (1, 2, 3)
 
-original = {"Argentina": "Buenos aires", 
-            "Brasil": "Brasilia", 
-            "Chile":"Santiago", 
-            "Colombia": "Bogota"}
-
-invertido = {}
-
-for i in original:
-    key=original[i]
-    value=i
-    tupla=(key, value)
-    invertido.update({tupla})
-
-print(invertido)
+print(t[1])
